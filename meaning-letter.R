@@ -59,7 +59,7 @@ chisq.test(
 # Study 4
 study4 <- read.spss("study-4-pnas-18987.sav", to.data.frame=T)
 
-# Replication of reported results
+## Replication of reported results
 study4.results <- lm(SuicideRate ~ NineEnd + RegionCode + Age + DeathsAll, data=study4)
 summary(study4.results)
 
