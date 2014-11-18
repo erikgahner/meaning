@@ -35,3 +35,25 @@ study2.obsreg <- lm(MeaningfulnessSum ~ NineEnd, data=study2)
 summary(study2.obsreg)
 
 # Study 3
+study3 <- read.spss("study-3-pnas-18948.sav", to.data.frame=T)
+
+## Number of observations
+sum(study3$Membership, na.rm=T)
+
+## Replication of reported result
+chisq.test(
+  c(sum(study3$Membership[study3$EndDigit == 9], na.rm=T),
+    sum(study3$Membership[study3$EndDigit != 9], na.rm=T)), 
+  p=c(1/10, 9/10)
+  )
+
+## 3 > 9 with comparable end digits
+sum(study3$Membership[study3$EndDigit == 3 & study3$Age > 29 & study3$Age < 60], na.rm=T) > sum(study3$Membership[study3$EndDigit == 9 & study3$Age > 29 & study3$Age < 60], na.rm=T)
+
+chisq.test(
+  c(sum(study3$Membership[study3$EndDigit == 9 & study3$Age > 29 & study3$Age < 60], na.rm=T),
+    sum(study3$Membership[study3$EndDigit == 3 & study3$Age > 29 & study3$Age < 60], na.rm=T)), 
+  p=c(1/2, 1/2)
+)
+
+# Study 4
