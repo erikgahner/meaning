@@ -7,7 +7,7 @@ In a paper published in the Proceedings of the National Academy of Sciences, [Pe
 
 I show that each of the six studies in the paper consist of at least one crucial deficiency hindering meaningful inferences. In several of the studies the results stems from the fact that the end digits are not comparable as 9, for example, is more likely to be found among younger age decades as the age range in all the studies is from 25 to 65. In other words, if people are more likely to engage in an activity at a younger age compared to later in life, higher end digits are more likely to measure such differences compared to lower end digits. When controlling properly for age the differences reported in some of the studies fails to reach statistical significance. In other studies, results were questionable due to empirical shortcomings.
 
-Go read the study before reading any further. I will assume you did so. All information needed to get the results reported here is in `meaning-letter.R`.
+Go read the study before reading any further. I will assume you did so. All information needed to get the results reported here is in `meaning.R`.
 
 ## Study 1: Search for meaning in 100 countries
 In Study 1, the authors use data from the World Values Survey. They conclude that "9-enders reported questioning the meaning or purpose of life more than respondents whose ages ended in any other digit". However, if one take age decades into consideration, the 9-ender effects fails to reach statistical significance (p=0.71) despite the sample size of 42.063. 
