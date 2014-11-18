@@ -40,7 +40,7 @@ study3 <- read.spss("study-3-pnas-18948.sav", to.data.frame=T)
 ## Number of observations
 sum(study3$Membership, na.rm=T)
 
-## Replication of reported result
+## Replication of reported results
 chisq.test(
   c(sum(study3$Membership[study3$EndDigit == 9], na.rm=T),
     sum(study3$Membership[study3$EndDigit != 9], na.rm=T)), 
@@ -57,3 +57,23 @@ chisq.test(
 )
 
 # Study 4
+study4 <- read.spss("study-4-pnas-18987.sav", to.data.frame=T)
+
+# Replication of reported results
+study4.results <- lm(SuicideRate ~ NineEnd + RegionCode + Age + DeathsAll, data=study4)
+summary(study4.results)
+
+study4.ageresults <- lm(SuicideRate ~ NineEnd, data=study4)
+summary(study4.ageresults)
+
+study4$Decade <- NA
+study4$Decade[study4$Age < 30] <- 0
+study4$Decade[study4$Age > 29 & study4$Age < 40] <- 1
+study4$Decade[study4$Age > 39 & study4$Age < 50] <- 2
+study4$Decade[study4$Age > 49 & study4$Age < 60] <- 3
+study4$Decade[study4$Age > 59 & study4$Age < 65] <- 4
+
+study4.agedecresults <- lm(SuicideRate ~ NineEnd + RegionCode + Age + DeathsAll + as.factor(Decade), data=study4)
+summary(study4.agedecresults)
+
+# Study 5
