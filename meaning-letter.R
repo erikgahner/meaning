@@ -77,3 +77,12 @@ study4.agedecresults <- lm(SuicideRate ~ NineEnd + RegionCode + Age + DeathsAll 
 summary(study4.agedecresults)
 
 # Study 5
+study5 <- read.spss("study-5-pnas-19017.sav", to.data.frame=T)
+
+t.test(study5$Time29,study5$Time30,paired=TRUE)
+t.test(study5$Time29,study5$Time31,paired=TRUE)
+
+t.test(study5$Time39,study5$Time40,paired=TRUE)
+t.test(study5$Time39,study5$Time41,paired=TRUE)
+
+# Study 6
