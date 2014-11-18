@@ -86,3 +86,8 @@ t.test(study5$Time39,study5$Time40,paired=TRUE)
 t.test(study5$Time39,study5$Time41,paired=TRUE)
 
 # Study 6
+study6 <- read.spss("study-6-pnas-19052.sav", to.data.frame=T)
+
+study6$NineEnd <- ifelse(study6$Age == 29 | study6$Age == 39 | study6$Age == 49 | study6$Age == 59, 1, 0)
+
+prop.test(sum(study6$NineEnd[study6$Age > 29 & study6$Age < 60]), nrow(study6[study6$Age > 29 & study6$Age < 60,]), p=0.1, correct=FALSE) 
