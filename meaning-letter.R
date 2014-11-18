@@ -22,4 +22,16 @@ summary(study1.agecontrol)
 
 # Study 2
 study2 <- read.spss("study-2-pnas-18916.sav", to.data.frame=T)
-head(study2)
+
+study2 <- within(study2, Condition <- relevel(Condition, ref = 2))
+study2.agecheck <- lm(Age ~ as.factor(Condition), data=study2)
+summary(study2.agecheck)
+
+study2.decadedischeck <- lm(DistanceFromNewDecade ~ as.factor(Condition), data=study2)
+summary(study2.decadedischeck)
+
+study2$NineEnd <- ifelse(study2$Age == 29 | study2$Age == 39 | study2$Age == 49 | study2$Age == 59, 1, 0)
+study2.obsreg <- lm(MeaningfulnessSum ~ NineEnd, data=study2)
+summary(study2.obsreg)
+
+# Study 3
