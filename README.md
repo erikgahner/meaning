@@ -2,6 +2,7 @@
 
 In a paper published in the Proceedings of the National Academy of Sciences, [People search for meaning when they approach a new decade in chronological age](http://www.pnas.org/content/early/2014/11/12/1415086111.abstract), Adam L. Alter and Hal E. Hershfield conclude that "adults undertake a search for existential meaning when they approach a new decade in age (e.g., at ages 29, 39, 49, etc.) or imagine entering a new epoch, which leads them to behave in ways that suggest an ongoing or failed search for meaning (e.g., by exercising more vigorously, seeking extramarital affairs, or choosing to end their lives)". Across six studies the authors find significant effects of being a so-called 9-ender on a variety of measures related to meaning searching activities. The study is getting coverage, among other places, here:
 
+- The Guardian: [Countdown to big birthdays: how it feels to be on the cusp](http://www.theguardian.com/lifeandstyle/2014/nov/29/countdown-to-big-birthdays)
 - New Republic: [We Make Major Decisions Just Before Big Birthdays](http://www.newrepublic.com/article/120320/we-make-major-decisions-29-39-49-etc)
 - The Huffington Post: [People Nearing A Milestone Birthday May Be More Likely To Make A Life-Altering Decision, Research Finds](http://www.huffingtonpost.com/2014/11/17/when-age-ends-in-9_n_6171782.html)
 - Salon: [Why people make life-changing decisions right before their 30th birthday](http://www.salon.com/2014/11/19/you_are_more_likely_to_make_a_huge_decision_before_a_major_birthday/)
