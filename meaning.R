@@ -1,4 +1,5 @@
-# Data sets can be downloaded in SPSS format from http://www.openicpsr.org/repoEntity/show/18882?versionId=18882V2
+# Data from Alter and Hershfield (2014) can be downloaded in SPSS format from http://www.openicpsr.org/repoEntity/show/18882?versionId=18882V2
+# Data from World Values Survey can be downloaded in SPSS format from http://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp (usage information required)
 
 library(foreign)
 
@@ -19,6 +20,26 @@ summary(study1.reported)
 ## Result with age decade control
 study1.agecontrol <- lm(Meaning ~ NineEnd + as.factor(Decade), data=study1)
 summary(study1.agecontrol)
+
+## Original data
+study1.org <- read.spss("WorldValuesSurvey-Wave6-2010-2014_v2014-11-07_spss.sav", to.data.frame=T)
+study1.org$Age <- study1.org$V242
+study1.org <- study1.org[study1.org$Age > 24 & study1.org$Age < 65,]
+nrow(study1.org)
+
+study1.org$Meaning <- NA
+study1.org$Meaning[study1.org$V143 == "Never"] <- 1
+study1.org$Meaning[study1.org$V143 == "Rarely"] <- 2
+study1.org$Meaning[study1.org$V143 == "Sometimes"] <- 3
+study1.org$Meaning[study1.org$V143 == "Often"] <- 4
+
+study1.org$NineEnd <- ifelse(study1.org$Age == 29 | study1.org$Age == 39 | study1.org$Age == 49 | study1.org$Age == 59, 1, 0)
+
+study1.org.result <- lm(Meaning ~ NineEnd, data=study1.org)
+summary(study1.org.result)
+
+study1.org.r.studentsold <- lm(Meaning ~ NineEnd, data=study1.org[study1.org$V229 != 4 & study1.org$V229 != 6,])
+summary(study1.org.r.studentsold)
 
 # Study 2
 study2 <- read.spss("study-2-pnas-18916.sav", to.data.frame=T)
